@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="font-sans text-2xl font-bold mb-4">Sarah Johnson</h3>
+            <h3 className="font-sans text-2xl font-bold mb-4">Mohan Mehra</h3>
             <p className="font-serif text-background/80 leading-relaxed">
               Passionate educator dedicated to helping students achieve their learning goals through innovative teaching
               methods.
@@ -60,7 +60,7 @@ export default function Footer() {
 
         <div className="border-t border-background/20 pt-8 text-center">
           <p className="font-serif text-background/60">
-            © 2024 Sarah Johnson. All rights reserved. Built with passion for education.
+            © 2025 Mohan Mehra. All rights reserved. Built with passion for education.
           </p>
         </div>
       </div>
