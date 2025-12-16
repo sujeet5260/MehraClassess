@@ -1,20 +1,66 @@
-"use client"
-
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import { Clock, Users, Star } from "lucide-react"
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger)
+/* ---------------- Utility ---------------- */
+
+function cn(...classes) {
+  return classes.filter(Boolean).join(" ")
 }
+
+/* ---------------- Card Components ---------------- */
+
+function Card({ className, ...props }) {
+  return (
+    <div
+      className={cn(
+        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function CardContent({ className, ...props }) {
+  return <div className={cn("px-6", className)} {...props} />
+}
+
+function CardFooter({ className, ...props }) {
+  return (
+    <div
+      className={cn("flex items-center px-6 [.border-t]:pt-6", className)}
+      {...props}
+    />
+  )
+}
+
+/* ---------------- Button Component ---------------- */
+
+function Button({ className, ...props }) {
+  return (
+    <button
+      className={cn(
+        "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-9 px-4 py-2",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+/* ---------------- GSAP Setup ---------------- */
+
+gsap.registerPlugin(ScrollTrigger)
+
+/* ---------------- Courses Data ---------------- */
 
 const courses = [
   {
     title: "JavaScript Fundamentals",
-    description: "Master the basics of JavaScript programming with hands-on projects and real-world applications.",
+    description:
+      "Master the basics of JavaScript programming with hands-on projects and real-world applications.",
     image: "/javascript-tutorial-interface.png",
     duration: "8 weeks",
     students: 1250,
@@ -22,7 +68,8 @@ const courses = [
   },
   {
     title: "React Development",
-    description: "Build modern web applications using React, hooks, and component-based architecture.",
+    description:
+      "Build modern web applications using React, hooks, and component-based architecture.",
     image: "/react-component-structure.png",
     duration: "10 weeks",
     students: 890,
@@ -30,7 +77,8 @@ const courses = [
   },
   {
     title: "Data Science with Python",
-    description: "Explore data analysis, visualization, and machine learning using Python and popular libraries.",
+    description:
+      "Explore data analysis, visualization, and machine learning using Python and popular libraries.",
     image: "/data-science-python-charts.png",
     duration: "12 weeks",
     students: 650,
@@ -38,7 +86,8 @@ const courses = [
   },
   {
     title: "Network Security Basics",
-    description: "Learn fundamental concepts of network security, encryption, and cybersecurity best practices.",
+    description:
+      "Learn fundamental concepts of network security, encryption, and cybersecurity best practices.",
     image: "/network-security-cybersecurity.png",
     duration: "6 weeks",
     students: 420,
@@ -46,7 +95,8 @@ const courses = [
   },
   {
     title: "Advanced Mathematics",
-    description: "Dive deep into calculus, linear algebra, and statistical analysis for STEM applications.",
+    description:
+      "Dive deep into calculus, linear algebra, and statistical analysis for STEM applications.",
     image: "/advanced-mathematics-equations.png",
     duration: "14 weeks",
     students: 380,
@@ -54,7 +104,8 @@ const courses = [
   },
   {
     title: "Web Design Principles",
-    description: "Create beautiful, user-friendly websites using modern design principles and best practices.",
+    description:
+      "Create beautiful, user-friendly websites using modern design principles and best practices.",
     image: "/modern-website-layouts.png",
     duration: "8 weeks",
     students: 720,
@@ -62,34 +113,38 @@ const courses = [
   },
 ]
 
+/* ---------------- Main Component ---------------- */
+
 export default function CoursesSection() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const coursesRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef(null)
+  const coursesRef = useRef(null)
 
   useEffect(() => {
-    if (typeof window !== "undefined" && sectionRef.current) {
-      gsap.fromTo(
-        coursesRef.current?.children || [],
-        {
-          y: 100,
-          opacity: 0,
-          scale: 0.9,
+    if (!sectionRef.current || !coursesRef.current) return
+
+    const cards = Array.from(coursesRef.current.children)
+
+    gsap.fromTo(
+      cards,
+      { y: 100, opacity: 0, scale: 0.9 },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
         },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse",
-          },
-        },
-      )
+      }
+    )
+
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill())
     }
   }, [])
 
@@ -97,7 +152,9 @@ export default function CoursesSection() {
     <section ref={sectionRef} className="py-20 px-4 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-sans text-4xl md:text-5xl font-bold text-foreground mb-6">Featured Courses</h2>
+          <h2 className="font-sans text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Featured Courses
+          </h2>
           <p className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto">
             Comprehensive courses designed to help you master new skills and advance your career.
           </p>
@@ -121,8 +178,12 @@ export default function CoursesSection() {
               </div>
 
               <CardContent className="p-6">
-                <h3 className="font-sans text-xl font-bold text-card-foreground mb-3">{course.title}</h3>
-                <p className="font-serif text-muted-foreground mb-4 leading-relaxed">{course.description}</p>
+                <h3 className="font-sans text-xl font-bold text-card-foreground mb-3">
+                  {course.title}
+                </h3>
+                <p className="font-serif text-muted-foreground mb-4 leading-relaxed">
+                  {course.description}
+                </p>
 
                 <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
                   <div className="flex items-center gap-1">
@@ -141,7 +202,7 @@ export default function CoursesSection() {
               </CardContent>
 
               <CardFooter className="p-6 pt-0">
-                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-serif">
+                <Button className="w-full font-serif">
                   View More
                 </Button>
               </CardFooter>
