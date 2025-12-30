@@ -1,12 +1,13 @@
-import { useEffect, useRef } from "react"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { GraduationCap, Users, Award } from "lucide-react"
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { GraduationCap, Users, Award } from "lucide-react";
+
 
 /* ---------- Card Components (Merged) ---------- */
 
 function cn(...classes) {
-  return classes.filter(Boolean).join(" ")
+  return classes.filter(Boolean).join(" ");
 }
 
 function Card({ className, ...props }) {
@@ -18,32 +19,27 @@ function Card({ className, ...props }) {
       )}
       {...props}
     />
-  )
+  );
 }
 
 function CardContent({ className, ...props }) {
-  return (
-    <div
-      className={cn("px-6", className)}
-      {...props}
-    />
-  )
+  return <div className={cn("px-6", className)} {...props} />;
 }
 
 /* ---------- GSAP Setup ---------- */
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 /* ---------- Main Component ---------- */
 
 export default function AboutSection() {
-  const sectionRef = useRef(null)
-  const cardsRef = useRef(null)
+  const sectionRef = useRef(null);
+  const cardsRef = useRef(null);
 
   useEffect(() => {
-    if (!sectionRef.current || !cardsRef.current) return
+    if (!sectionRef.current || !cardsRef.current) return;
 
-    const cards = Array.from(cardsRef.current.children)
+    const cards = Array.from(cardsRef.current.children);
 
     const anim = gsap.fromTo(
       cards,
@@ -61,13 +57,13 @@ export default function AboutSection() {
           toggleActions: "play none none reverse",
         },
       }
-    )
+    );
 
     return () => {
-      anim.scrollTrigger?.kill()
-      anim.kill()
-    }
-  }, [])
+      anim.scrollTrigger?.kill();
+      anim.kill();
+    };
+  }, []);
 
   return (
     <section ref={sectionRef} className="py-20 px-4 bg-background">
@@ -77,9 +73,12 @@ export default function AboutSection() {
             About Me
           </h2>
           <p className="font-serif text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            With over 8 years of experience in education, I specialize in making complex concepts accessible and
-            engaging. My teaching philosophy centers on creating inclusive learning environments where every student can
-            thrive.
+            Hello Everyone, Welcome to Mehra Classes, Mehra Classes India's
+            premier institution established with the sole aim to initiate,
+            enable and empower individuals to grow up to be extraordinary
+            professionals. I provided Test Series, Live Classes, and IMP Notes
+            Like UGC NET, CSIR NET, SSC, MPPSC Assistant Professor, SET Exam,
+            MPESB etc.
           </p>
         </div>
 
@@ -93,7 +92,8 @@ export default function AboutSection() {
                 Education
               </h3>
               <p className="font-serif text-muted-foreground">
-                M.Ed in Curriculum & Instruction from Stanford University. Specialized in digital learning methodologies.
+                M.Ed in Curriculum & Instruction from Stanford University.
+                Specialized in digital learning methodologies.
               </p>
             </CardContent>
           </Card>
@@ -107,7 +107,8 @@ export default function AboutSection() {
                 Experience
               </h3>
               <p className="font-serif text-muted-foreground">
-                8+ years teaching experience with over 2,000 students across various subjects and age groups.
+                8+ years teaching experience with over 2,000 students across
+                various subjects and age groups.
               </p>
             </CardContent>
           </Card>
@@ -121,12 +122,13 @@ export default function AboutSection() {
                 Recognition
               </h3>
               <p className="font-serif text-muted-foreground">
-                Excellence in Teaching Award recipient and certified in multiple educational technologies.
+                Excellence in Teaching Award recipient and certified in multiple
+                educational technologies.
               </p>
             </CardContent>
           </Card>
         </div>
       </div>
     </section>
-  )
+  );
 }

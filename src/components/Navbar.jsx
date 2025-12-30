@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
+import Logo from "../assets/Logo.jpeg"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -32,8 +33,10 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
+          
           {/* Logo */}
-          <a href="#home" className="font-sans text-xl font-bold text-gray-900">
+          <a href="#home" className="font-sans text-xl font-bold text-gray-900 flex items-center gap-2">
+            <div className="w-10"><img src={Logo} alt="" /></div>
             Mohan Mehra
           </a>
 

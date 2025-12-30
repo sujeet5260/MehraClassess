@@ -2,6 +2,13 @@ import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Clock, Users, Star } from "lucide-react"
+import Img1 from "../assets/Images/img1.jpeg"
+import Img2 from "../assets/Images/img2.jpeg"
+import Img3 from "../assets/Images/img3.jpeg"
+import Img4 from "../assets/Images/img4.jpeg"
+import Img5 from "../assets/Images/img5.jpeg"
+import Img6 from "../assets/Images/img6.jpeg"
+import Img7 from "../assets/Images/img7.jpeg"
 
 /* ---------------- Utility ---------------- */
 
@@ -58,55 +65,55 @@ gsap.registerPlugin(ScrollTrigger)
 
 const courses = [
   {
-    title: "JavaScript Fundamentals",
+    title: "Mathematics",
     description:
-      "Master the basics of JavaScript programming with hands-on projects and real-world applications.",
-    image: "/javascript-tutorial-interface.png",
+      "Build strong mathematical concepts with complete syllabus coverage Practice smart with topic-wise tests and detailed solutions.",
+    image: Img1,
     duration: "8 weeks",
     students: 1250,
     rating: 4.9,
   },
   {
-    title: "React Development",
+    title: "Political Science",
     description:
-      "Build modern web applications using React, hooks, and component-based architecture.",
-    image: "/react-component-structure.png",
+      "Master Political Science with complete syllabus coverage Concept-based learning with exam-oriented test series.",
+    image: Img2,
     duration: "10 weeks",
     students: 890,
     rating: 4.8,
   },
   {
-    title: "Data Science with Python",
+    title: "Sub. Physics",
     description:
-      "Explore data analysis, visualization, and machine learning using Python and popular libraries.",
-    image: "/data-science-python-charts.png",
+      "Clear concepts. Accurate numericals Physics made exam-ready.",
+    image: Img3,
     duration: "12 weeks",
     students: 650,
     rating: 4.9,
   },
   {
-    title: "Network Security Basics",
+    title: "Sub. Botany",
     description:
-      "Learn fundamental concepts of network security, encryption, and cybersecurity best practices.",
-    image: "/network-security-cybersecurity.png",
+      "Where concepts grow and clarity blooms Botany preparation made structured and exam-ready 🌱",
+    image: Img4,
     duration: "6 weeks",
     students: 420,
     rating: 4.7,
   },
   {
-    title: "Advanced Mathematics",
+    title: "MP-GK Paper 1",
     description:
-      "Dive deep into calculus, linear algebra, and statistical analysis for STEM applications.",
-    image: "/advanced-mathematics-equations.png",
+      "One paper. One seat. One clear strategy MP-GK Paper-1 made simple, structured, and scoring.",
+    image: Img5,
     duration: "14 weeks",
     students: 380,
     rating: 4.8,
   },
   {
-    title: "Web Design Principles",
+    title: "MP-GK MCQs",
     description:
       "Create beautiful, user-friendly websites using modern design principles and best practices.",
-    image: "/modern-website-layouts.png",
+    image: Img6,
     duration: "8 weeks",
     students: 720,
     rating: 4.9,

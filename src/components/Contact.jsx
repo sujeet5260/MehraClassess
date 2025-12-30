@@ -150,7 +150,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h3 className="font-sans text-lg font-bold">Email</h3>
-                    <p className="font-serif text-muted-foreground">sarah.johnson@email.com</p>
+                    <p className="font-serif text-muted-foreground">Mohanmehra5830@gmail.com</p>
                   </div>
                 </div>
 
@@ -160,7 +160,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h3 className="font-sans text-lg font-bold">Phone</h3>
-                    <p className="font-serif text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="font-serif text-muted-foreground">+91 9200925830</p>
                   </div>
                 </div>
 
@@ -170,7 +170,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h3 className="font-sans text-lg font-bold">Location</h3>
-                    <p className="font-serif text-muted-foreground">San Francisco, CA</p>
+                    <p className="font-serif text-muted-foreground">Bhopal, Madhya Pradesh</p>
                   </div>
                 </div>
               </CardContent>

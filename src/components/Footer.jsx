@@ -42,16 +42,38 @@ export default function Footer() {
           <div>
             <h4 className="font-sans text-lg font-bold mb-4">Connect With Me</h4>
             <div className="flex space-x-4">
-              <a href="#" className="text-background/80 hover:text-background transition-colors">
+              <a
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-background/80 hover:text-background transition-colors"
+              >
                 <Github className="w-6 h-6" />
               </a>
-              <a href="#" className="text-background/80 hover:text-background transition-colors">
+
+              <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-background/80 hover:text-background transition-colors"
+              >
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="#" className="text-background/80 hover:text-background transition-colors">
+
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-background/80 hover:text-background transition-colors"
+              >
                 <Twitter className="w-6 h-6" />
               </a>
-              <a href="#" className="text-background/80 hover:text-background transition-colors">
+
+              <a
+                href="mailto:mohanmehra5830@gmail.com"
+                className="text-background/80 hover:text-background transition-colors"
+                title="Send Email"
+              >
                 <Mail className="w-6 h-6" />
               </a>
             </div>
