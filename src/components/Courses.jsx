@@ -210,7 +210,7 @@ export default function CoursesSection() {
 
               <CardFooter className="p-6 pt-0">
                 <Button className="w-full font-serif">
-                  View More
+                  <a href="https://mehraclasses.akamai.net.in/" target="_blank" >  View More</a>
                 </Button>
               </CardFooter>
             </Card>

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ChevronDown } from "lucide-react"
+import Photo from "../assets/Images/Photo.jpeg"
 
 export default function HeroSection() {
   const heroRef = useRef(null)
@@ -46,9 +47,9 @@ export default function HeroSection() {
           <div className="relative">
             <div className="w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
               <img
-                src="/teacher-portrait.png"
+                src={Photo} 
                 alt="Sarah Johnson - Teacher"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
             <div className="absolute -bottom-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 bg-accent rounded-full flex items-center justify-center shadow-lg">
@@ -72,13 +73,13 @@ export default function HeroSection() {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <a
-              href="#courses"
+              href="https://mehraclasses.akamai.net.in/" target="_blank"
               className="px-6 py-3 text-base sm:text-lg rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground font-serif text-center"
             >
               View My Courses
             </a>
             <a
-              href="#contact"
+              href="https://wa.me/9179955784" target="_blank"
               className="px-6 py-3 text-base sm:text-lg rounded-lg border border-primary text-primary font-serif text-center hover:bg-primary/10"
             >
               Get In Touch

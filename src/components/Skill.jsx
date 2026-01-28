@@ -39,14 +39,54 @@ function CardContent({ className, ...props }) {
 /* ---------------- Skills Data ---------------- */
 
 const skills = [
-  { name: "JavaScript", level: 95, icon: FaJsSquare, color: "#f7df1e" },
-  { name: "React", level: 90, icon: FaReact, color: "#61dafb" },
-  { name: "Mathematics", level: 88, icon: AiOutlineBarChart, color: "#a855f7" },
-  { name: "Networking", level: 85, icon: FaNetworkWired, color: "#22c55e" },
-  { name: "Python", level: 82, icon: FaPython, color: "#3776ab" },
-  { name: "Data Science", level: 78, icon: SiDatacamp, color: "#06b6d4" },
-  { name: "Web Design", level: 92, icon: FaPalette, color: "#ec4899" },
-  { name: "Curriculum Design", level: 96, icon: FaBookOpen, color: "#f97316" },
+  {
+    name: "General Studies (State & National)",
+    level: 94,
+    icon: FaBookOpen,
+    color: "#f97316",
+  },
+  {
+    name: "Madhya Pradesh GK",
+    level: 96,
+    icon: FaPalette,
+    color: "#ec4899",
+  },
+  {
+    name: "Indian Polity",
+    level: 90,
+    icon: FaReact,
+    color: "#61dafb",
+  },
+  {
+    name: "History & Culture",
+    level: 88,
+    icon: FaJsSquare,
+    color: "#f7df1e",
+  },
+  {
+    name: "Geography",
+    level: 89,
+    icon: FaNetworkWired,
+    color: "#22c55e",
+  },
+  {
+    name: "Quantitative Aptitude",
+    level: 92,
+    icon: AiOutlineBarChart,
+    color: "#a855f7",
+  },
+  {
+    name: "Reasoning Ability",
+    level: 91,
+    icon: FaPython,
+    color: "#3776ab",
+  },
+  {
+    name: "Hindi & English Language",
+    level: 87,
+    icon: SiDatacamp,
+    color: "#06b6d4",
+  },
 ]
 
 /* ---------------- Main Component ---------------- */

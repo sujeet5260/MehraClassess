@@ -35,30 +35,31 @@ function CardContent({ className, ...props }) {
 
 const testimonials = [
   {
-    name: "Alex Chen",
-    role: "Software Developer",
+    name: "Anil Sharma",
+    role: "State Govt. School Teacher",
     content:
-      "Sarah's JavaScript course transformed my career. Her teaching style is clear, engaging, and practical. I landed my dream job within 3 months of completing the course!",
+      "The classes helped me strengthen my fundamentals in MP GK and teaching methodology. The exam-oriented approach and clear explanations played an important role in my final selection.",
     rating: 5,
-    avatar: "/software-developer-headshot.png",
+    avatar: "/teacher-avatar-1.png",
   },
   {
-    name: "Maria Rodriguez",
-    role: "Data Analyst",
+    name: "Pooja Verma",
+    role: "Upper Primary Teacher (State)",
     content:
-      "The Data Science with Python course exceeded my expectations. Sarah breaks down complex concepts into digestible pieces. Highly recommended!",
+      "Child Development and Pedagogy was explained in a very simple and practical way. The notes and regular revisions were extremely useful during my final preparation phase.",
     rating: 5,
-    avatar: "/data-analyst-headshot.png",
+    avatar: "/teacher-avatar-2.png",
   },
   {
-    name: "David Kim",
-    role: "Web Designer",
+    name: "Rakesh Patel",
+    role: "High School Teacher (State Board)",
     content:
-      "As someone new to web design, Sarah's course gave me the confidence and skills I needed. The projects were challenging yet achievable.",
+      "The focus on concepts along with previous year questions made learning effective. These classes helped me clear the exam with confidence and perform well in the interview stage.",
     rating: 5,
-    avatar: "/web-designer-headshot.png",
+    avatar: "/teacher-avatar-3.png",
   },
 ]
+
 
 /* ---------------- Main Component ---------------- */
 
